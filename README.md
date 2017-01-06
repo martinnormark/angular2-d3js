@@ -1,4 +1,9 @@
-# Ng2D3
+# D3.js in Angular 2 (Typescript)
+
+Renders a line chart in D3 with `step-after` curve:
+![line-chart](chart.png)
+
+--------
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.21.
 
