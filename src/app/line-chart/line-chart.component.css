@@ -1,0 +1,20 @@
+h2 {
+  color: green;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #ddd;
+  shape-rendering: crispEdges;
+}
+
+.x.axis path {
+  display: none;
+}
+
+.line {
+  fill: none;
+  stroke: #bada55;
+  stroke-width: 1.5px;
+}
