@@ -1,2 +1,9 @@
-<h2>curve: step-after</h2>
+<h2>curve: {{ this.selectedCurve }}</h2>
+<div class="curve-options">
+  <label *ngFor="let curve of curveArray">
+    <input type="radio" name="curveOptions"
+      [checked]="curve.curveTitle === selectedCurve"
+      [value]="curve.curveTitle" (change)="onCurveChange(curve.curveTitle)"> {{ curve.curveTitle }}
+  </label>
+</div>
 <div #container class="container"><div>

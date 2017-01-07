@@ -30,6 +30,19 @@ export class LineChartComponent implements OnChanges, AfterViewInit {
   private yAxis;
   private htmlElement: HTMLElement;
 
+  curveArray = [
+    {'curve': D3.curveLinear, 'curveTitle': 'curveLinear'},
+    {'curve': D3.curveStep, 'curveTitle': 'curveStep'},
+    {'curve': D3.curveStepBefore, 'curveTitle': 'curveStepBefore'},
+    {'curve': D3.curveStepAfter, 'curveTitle': 'curveStepAfter'},
+    {'curve': D3.curveBasis, 'curveTitle': 'curveBasis'},
+    {'curve': D3.curveCardinal, 'curveTitle': 'curveCardinal'},
+    {'curve': D3.curveMonotoneX, 'curveTitle': 'curveMonotoneX'},
+    {'curve': D3.curveCatmullRom, 'curveTitle': 'curveCatmullRom'}
+  ];
+
+  selectedCurve = 'curveLinear';
+
   constructor() { }
 
   ngAfterViewInit() {
@@ -39,6 +52,11 @@ export class LineChartComponent implements OnChanges, AfterViewInit {
   }
 
   ngOnChanges(): void {
+    this.setup();
+  }
+
+  onCurveChange(curve: string) {
+    this.selectedCurve = curve;
     this.setup();
   }
 
@@ -59,8 +77,8 @@ export class LineChartComponent implements OnChanges, AfterViewInit {
 
     let self = this;
 
-    var line = D3.line()
-      .curve(D3.curveStepAfter)
+    let line = D3.line()
+      .curve(this.curveArray.find((item) => item.curveTitle === this.selectedCurve).curve || D3.curveLinear)
       .x(function(d: any) { return self.xScale(d.date); })
       .y(function(d: any) { return self.yScale(d.close); });
 
