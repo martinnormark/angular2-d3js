@@ -1,12 +1,16 @@
 h2 {
-  color: green;
+  color: #2ecc71;
 }
 
 .axis path,
 .axis line {
   fill: none;
-  stroke: #ddd;
+  stroke: #95a5a6;
   shape-rendering: crispEdges;
+}
+
+.axis text {
+  fill: #95a5a6;
 }
 
 .x.axis path {
@@ -15,6 +19,6 @@ h2 {
 
 .line {
   fill: none;
-  stroke: #bada55;
+  stroke: #2ecc71;
   stroke-width: 1.5px;
 }
