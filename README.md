@@ -1,6 +1,6 @@
 # D3.js in Angular 2 (Typescript)
 
-Renders a line chart in D3 with `step-after` curve:
+Renders a line chart in D3 with selectable `curve` using radio buttons:
 ![line-chart](chart.png)
 
 --------
